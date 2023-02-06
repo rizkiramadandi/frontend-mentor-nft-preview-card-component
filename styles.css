@@ -1,0 +1,163 @@
+:root {
+  --mobile: 375px;
+  --desktop: 1440px;
+
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+
+  --font-size: 18px;
+
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--white);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: var(--main-bg);
+    font-family: var(--font-outfit);
+    margin: 0 1rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    font-size: var(--font-size);
+    color: var(--white);
+    margin: 1rem auto;
+}
+
+@media screen and (min-width: 375px) {
+    .card {
+        width: 50%;
+    }
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    border-radius: .5rem;
+}
+
+.image:hover {
+    cursor: pointer;
+}
+
+.image:hover::before, .image:hover::after {
+    display: block;
+}
+
+.image::before {
+    transition: .25s;
+    content: '';
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cyan);
+    opacity: .5;
+}
+
+.image::after {
+    content: url('./images/icon-view.svg');
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+}
+
+img {
+    max-width: 100%;
+}
+
+.name {
+    margin: 1rem 0;
+}
+
+.description {
+    color: var(--soft-blue);
+    font-size: 80%;
+    font-weight: 100;
+}
+
+.info img {
+    margin-right: .25rem;
+}
+
+.info {
+    font-size: 75%;
+}
+
+.info, .info #eth, .info #times {
+    display: flex;
+    align-items: center;
+}
+
+.info #eth {
+    color: var(--cyan);
+}
+
+.info #times {
+    margin-left: auto;
+    color: var(--soft-blue);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--line);
+    margin: 1rem 0;
+}
+
+.creator {
+    display: flex;
+    align-items: center;
+}
+
+.creator img {
+    width: 2rem;
+    border-radius: 100%;
+    border: solid 1px var(--white);
+    margin-right: 1rem;
+}
+
+.creator {
+    color: var(--soft-blue);
+    font-size: 75%;
+}
+
+.hover {
+    color: var(--white);
+    transition: .25s;
+}
+
+.hover:hover {
+    cursor: pointer;
+    color: var(--cyan);
+}
+
+footer {
+    margin: 1rem 0;
+}
